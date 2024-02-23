@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="{% static 'js/main.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+<i>this is home page</i>
+    <h1>this is heading tag from templetes</h1>
+    <strong>my name is{{name}} i am {{age}}year old</strong>
+    {% if x > y %}
+    <p>{{x}} is greater</p>
+    {% else %}
+    <P>{{y}} is greater</P>
+    {% endif %}
+
+
+    {% for x in l %}
+    {{x}} <br>
+    {% endfor %}
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>price</th>
+            <th>category</th>
+        </tr>
+        {% for i in products %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.cat}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button onclick="greet()">click me</button>
+</body>
+</html>
